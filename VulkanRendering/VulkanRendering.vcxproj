@@ -119,16 +119,10 @@
     <PostBuildEvent>
       <Command>xcopy "$(SolutionDir)Dependencies\glfw\bin\$(Platform)\glfw3.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_api_dump.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_assistant_layer.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_core_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_device_simulation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_khronos_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_object_lifetimes.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_stateless_validation.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_thread_safety.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_unique_objects.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -149,16 +143,10 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
     <PostBuildEvent>
       <Command>xcopy "$(SolutionDir)Dependencies\glfw\bin\$(Platform)\glfw3.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_api_dump.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_assistant_layer.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_core_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_device_simulation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_khronos_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_object_lifetimes.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_stateless_validation.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_thread_safety.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_unique_objects.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -183,16 +171,10 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
     <PostBuildEvent>
       <Command>xcopy "$(SolutionDir)Dependencies\glfw\bin\$(Platform)\glfw3.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_api_dump.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_assistant_layer.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_core_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_device_simulation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_khronos_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_object_lifetimes.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_stateless_validation.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_thread_safety.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_unique_objects.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -217,16 +199,10 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
     <PostBuildEvent>
       <Command>xcopy "$(SolutionDir)Dependencies\glfw\bin\$(Platform)\glfw3.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_api_dump.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_assistant_layer.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_core_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_device_simulation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_khronos_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_object_lifetimes.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_stateless_validation.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_thread_safety.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_unique_objects.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
