@@ -105,6 +105,7 @@ private:
 		createLogicalDevice();
 		createSwapChain();
 		createImageViews();
+		createGraphicsPipeline();
 	}
 
 	void mainLoop() {
@@ -463,6 +464,11 @@ private:
 		}
 
 		return indices;
+	}
+
+	void createGraphicsPipeline()
+	{
+		
 	}
 
 	std::vector<const char*> getRequiredExtensions() {
