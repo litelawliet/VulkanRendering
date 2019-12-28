@@ -125,6 +125,9 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -149,6 +152,9 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -177,6 +183,9 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -205,6 +214,9 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
