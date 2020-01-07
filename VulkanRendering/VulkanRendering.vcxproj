@@ -82,7 +82,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include\;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
     <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -98,7 +98,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include\;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
     <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -224,6 +224,9 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Vertex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
