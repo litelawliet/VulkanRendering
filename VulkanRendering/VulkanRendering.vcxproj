@@ -127,7 +127,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll"
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
+      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y 
+xcopy "$(SolutionDir)rsc" "$(ProjectDir)rsc\" /E /S /Y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -226,6 +227,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Camera.h" />
+    <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="include\Vertex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
