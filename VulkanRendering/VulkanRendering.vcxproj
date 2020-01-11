@@ -74,33 +74,33 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,7 +115,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -124,7 +124,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_device_simulati
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_khronos_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
+xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y
+xcopy "$(SolutionDir)Dependencies\assimp5\bin\$(Platform)\$(Configuration)\assimp-vc142-mtd.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y 
@@ -144,7 +145,7 @@ xcopy "$(SolutionDir)rsc" "$(ProjectDir)rsc\" /E /S /Y</Command>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -153,7 +154,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_device_simulati
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_khronos_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
+xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y
+xcopy "$(SolutionDir)Dependencies\assimp5\bin\$(Platform)\$(Configuration)\assimp-vc142-mtd.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
@@ -176,7 +178,7 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;assimp-vc142-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -185,7 +187,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_device_simulati
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_khronos_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
+xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y
+xcopy "$(SolutionDir)Dependencies\assimp5\bin\$(Platform)\$(Configuration)\assimp-vc142-mt.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
@@ -208,7 +211,7 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;assimp-vc142-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -217,7 +220,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_device_simulati
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_khronos_validation.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_monitor.dll" "$(OutDir)" /E /Y
 xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_screenshot.dll" "$(OutDir)" /E /Y
-xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y</Command>
+xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.dll" "$(OutDir)" /E /Y
+xcopy "$(SolutionDir)Dependencies\assimp5\bin\$(Platform)\$(Configuration)\assimp-vc142-mt.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
@@ -228,6 +232,7 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Camera.h" />
+    <ClInclude Include="include\Material.h" />
     <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="include\Vertex.h" />
   </ItemGroup>
