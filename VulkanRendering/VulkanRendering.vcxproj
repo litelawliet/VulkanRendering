@@ -158,7 +158,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
 xcopy "$(SolutionDir)Dependencies\assimp5\bin\$(Platform)\$(Configuration)\assimp-vc142-mtd.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
+      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y 
+xcopy "$(SolutionDir)rsc" "$(ProjectDir)rsc\" /E /S /Y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -191,7 +192,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
 xcopy "$(SolutionDir)Dependencies\assimp5\bin\$(Platform)\$(Configuration)\assimp-vc142-mt.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
+      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y 
+xcopy "$(SolutionDir)rsc" "$(ProjectDir)rsc\" /E /S /Y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -224,7 +226,8 @@ xcopy "$(SolutionDir)Dependencies\vulkan\bin\$(Platform)\VkLayer_vktrace_layer.d
 xcopy "$(SolutionDir)Dependencies\assimp5\bin\$(Platform)\$(Configuration)\assimp-vc142-mt.dll" "$(OutDir)" /E /Y</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y </Command>
+      <Command>xcopy "$(SolutionDir)rsc" "$(OutDir)rsc\" /E /S /Y 
+xcopy "$(SolutionDir)rsc" "$(ProjectDir)rsc\" /E /S /Y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
