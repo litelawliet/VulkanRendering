@@ -74,33 +74,33 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include\;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(SolutionDir)Dependencies\imgui\;$(SolutionDir)Dependencies\GPM\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(SolutionDir)Dependencies\GPM\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include\;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(SolutionDir)Dependencies\imgui\;$(SolutionDir)Dependencies\GPM\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(SolutionDir)Dependencies\GPM\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include\;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(SolutionDir)Dependencies\imgui\;$(SolutionDir)Dependencies\GPM\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(SolutionDir)Dependencies\GPM\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)obj\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>$(ProjectDir)include;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)include\;$(SolutionDir)Dependencies\glfw\include\;$(SolutionDir)Dependencies\glm\include\;$(SolutionDir)Dependencies\vulkan\include\;$(SolutionDir)Dependencies\assimp5\include\;$(SolutionDir)Dependencies\imgui\;$(SolutionDir)Dependencies\GPM\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
-    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw\lib\$(Platform)\$(Configuration);$(SolutionDir)Dependencies\vulkan\lib\$(Platform)\;$(SolutionDir)Dependencies\assimp5\lib\$(Platform)\$(Configuration)\;$(SolutionDir)Dependencies\GPM\lib\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,7 +115,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;GPM.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -145,7 +145,7 @@ xcopy "$(SolutionDir)rsc" "$(ProjectDir)rsc\" /E /S /Y</Command>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;GPM.lib;assimp-vc142-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -179,7 +179,7 @@ xcopy "$(SolutionDir)rsc" "$(ProjectDir)rsc\" /E /S /Y</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;assimp-vc142-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;GPM.lib;assimp-vc142-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -213,7 +213,7 @@ xcopy "$(SolutionDir)rsc" "$(ProjectDir)rsc\" /E /S /Y</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;assimp-vc142-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;vulkan-1.lib;GPM.lib;assimp-vc142-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
