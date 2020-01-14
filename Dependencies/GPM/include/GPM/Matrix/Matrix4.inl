@@ -275,6 +275,47 @@ constexpr Matrix4<T> Matrix4<T>::Inverse(const Matrix4<T>& p_matrix)
 }
 
 template<typename T>
+constexpr Matrix4<T> Matrix4<T>::Rotate(const Matrix4<T>& p_matrix, const T p_angle, const Vector3<T>& p_axis)
+{
+	T const a = p_angle;
+	T const c = static_cast<T>(Tools::Utils::Cos(a));
+	T const s = static_cast<T>(Tools::Utils::Sin(a));
+
+	Vector3<T> axis(Vector3<T>::Normalize(p_axis));
+	Vector3<T> temp(axis * (T(1) - c));
+
+	Matrix4<T> Rotate = identity;
+	Rotate(0, 0) = c + temp[0] * axis[0];
+	Rotate(0, 1) = temp[0] * axis[1] + s * axis[2];
+	Rotate(0, 2) = temp[0] * axis[2] - s * axis[1];
+
+	Rotate(1, 0) = temp[1] * axis[0] - s * axis[2];
+	Rotate(1, 1) = c + temp[1] * axis[1];
+	Rotate(1, 2) = temp[1] * axis[2] + s * axis[0];
+
+	Rotate(2, 0) = temp[2] * axis[0] + s * axis[1];
+	Rotate(2, 1) = temp[2] * axis[1] - s * axis[0];
+	Rotate(2, 2) = c + temp[2] * axis[2];
+
+	Matrix4<T> Result;
+	Vector4<T> firstLine = Vector4<T>{ p_matrix.m_data[0], p_matrix.m_data[1], p_matrix.m_data[2], p_matrix.m_data[3] };
+	Vector4<T> secondLine = Vector4<T>{ p_matrix.m_data[4], p_matrix.m_data[5], p_matrix.m_data[6], p_matrix.m_data[7] };
+	Vector4<T> thirdLine = Vector4<T>{ p_matrix.m_data[8], p_matrix.m_data[9], p_matrix.m_data[10], p_matrix.m_data[11] };
+	Vector4<T> fourthLine = Vector4<T>{ p_matrix.m_data[12], p_matrix.m_data[13], p_matrix.m_data[14], p_matrix.m_data[15] };
+
+	Vector4<T> resultFirst = firstLine * Rotate(0, 0) + secondLine * Rotate(0, 1) + thirdLine * Rotate(0, 2);
+	Vector4<T> resultSecond = firstLine * Rotate(1, 0) + secondLine * Rotate(1, 1) + thirdLine * Rotate(1, 2);
+	Vector4<T> resultThird = firstLine * Rotate(2, 0) + secondLine * Rotate(2, 1) + thirdLine * Rotate(2, 2);
+
+	Result[0] = resultFirst[0]; Result[1] = resultFirst[1]; Result[2] = resultFirst[2]; Result[3] = resultFirst[3];
+	Result[4] = resultSecond[0]; Result[5] = resultSecond[1]; Result[6] = resultSecond[2]; Result[7] = resultSecond[3];
+	Result[8] = resultThird[0]; Result[9] = resultThird[1]; Result[10] = resultThird[2]; Result[11] = resultThird[3];
+	Result[12] = fourthLine[0]; Result[13] = fourthLine[1]; Result[14] = fourthLine[2]; Result[15] = fourthLine[3];
+
+	return Result;
+}
+
+template<typename T>
 constexpr Matrix4<T> Matrix4<T>::LookAt(const Vector3<T>& p_position, const Vector3<T>& p_target, const Vector3<T>& p_up)
 {
 	const Vector3<T> w = Vector3<T>::Normalize(p_target - p_position);
@@ -301,7 +342,22 @@ constexpr Matrix4<T> Matrix4<T>::Perspective(const T p_fovy, const T p_aspectRat
 	result(2, 2) = p_far / (p_near - p_far);
 	result(2, 3) = -static_cast<T>(1);
 	result(3, 2) = -(p_far * p_near) / (p_far - p_near);
-	
+
+	return result;
+}
+
+template<typename T>
+constexpr Matrix4<T> Matrix4<T>::Orthographic(const T p_left, const T p_right, const T p_bottom, const T p_top, const T p_near, const T p_far)
+{
+	Matrix4<T> result = identity;
+
+	result(0, 0) = static_cast<T>(2) / static_cast<T>(p_right - p_left);
+	result(1, 1) = static_cast<T>(2) / static_cast<T>(p_top - p_bottom);
+	result(2, 2) = -static_cast<T>(1);
+	result(3, 0) = -(p_right + p_left) / static_cast<T>(p_right - p_left);
+	result(3, 1) = -(p_top + p_bottom) / static_cast<T>(p_top - p_bottom);
+	result(3, 2) = -(p_far + p_near) / static_cast<T>(p_far - p_near);
+
 	return result;
 }
 

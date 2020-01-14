@@ -86,8 +86,45 @@ namespace GPM
 
         constexpr static Matrix4<T> Inverse(const Matrix4<T>& p_matrix);
 
+    	/**
+    	 *  @brief Rotate a matrix of a certain angle around a certain axis using matrices.
+    	 *  @param p_matrix Matrix of reference
+    	 *  @param p_angle Angle of the rotation in radian
+    	 *  @param p_axis Axis of rotation
+    	 *  @return A matrix rotated from the referenced one.
+    	 */
+        constexpr static Matrix4<T> Rotate(const Matrix4<T>& p_matrix, const T p_angle, const Vector3<T>& p_axis);
+
+        /**
+		 *  @brief View matrix made of the position, target and world's up vector.
+		 *  @param p_position  Position of the camera
+		 *  @param p_target Point to look at
+		 *  @param p_up Up axis of the world. (x=0, y=1, z=0) by default
+		 *  @return The view matrix
+		 */
         constexpr static Matrix4<T> LookAt(const Vector3<T>& p_position, const Vector3<T>& p_target, const Vector3<T>& p_up = { 0, 1, 0 });
+
+        /**
+		 *  @brief Perspective projection matrix.
+		 *  @param p_fovy Field of view
+		 *  @param p_aspectRatio Aspect ratio of the window
+		 *  @param p_near Minimal offset between the camera position and the rendering space
+		 *  @param p_far Maximum offset between the camera position and the rendering space
+		 *  @note Every objects that are outside p_near and p_far range is not rendered.
+		 *  @return The perspective projection matrix
+		 */
         constexpr static Matrix4<T> Perspective(const T p_fovy, const T p_aspectRatio, const T p_near, const T p_far);
+
+        /**
+		 *  @brief Orthographic projection matrix.
+		 *  @param p_left Left corner of the rendering space
+		 *  @param p_right Right corner of the rendering space
+		 *  @param p_bottom Bottom corner of the rendering space
+		 *  @param p_top Top corner of the rendering space
+		 *  @note Depending on how the graphic API is rendering, you may have to reverse the top and bottom (and more rarely left and right as well).
+		 *  @return The orthographic projection matrix
+		 */
+        constexpr static Matrix4<T> Orthographic(const T p_left, const T p_right, const T p_bottom, const T p_top, const T p_near = static_cast<T>(0), const T p_far = static_cast<T>(1000));
 #pragma endregion
 
         //TODO clean these
