@@ -494,7 +494,7 @@ constexpr std::string Matrix3<T>::ToString(const Matrix3<T>& p_matrix)
 }
 
 template<typename T>
-T Matrix3<T>::operator[](const int p_index) const
+T& Matrix3<T>::operator[](const int p_index)
 {
 	if (p_index < 0 || p_index > 8)
 		throw std::out_of_range("Out of range index in Matrix3");
@@ -503,7 +503,7 @@ T Matrix3<T>::operator[](const int p_index) const
 }
 
 template <typename T>
-T Matrix3<T>::operator()(const int p_row, const int p_col) const
+T& Matrix3<T>::operator()(const int p_row, const int p_col)
 {
 	if (p_row < 0 || p_row > 2)
 		throw std::out_of_range("Out of range 'row' in Matrix3");

@@ -87,7 +87,7 @@ namespace GPM
         constexpr static Matrix4<T> Inverse(const Matrix4<T>& p_matrix);
 
         constexpr static Matrix4<T> LookAt(const Vector3<T>& p_position, const Vector3<T>& p_target, const Vector3<T>& p_up = { 0, 1, 0 });
-        constexpr static Matrix4<T> Perspective(const float p_fovy, const float p_aspectRatio, const float p_near, const float p_far);
+        constexpr static Matrix4<T> Perspective(const T p_fovy, const T p_aspectRatio, const T p_near, const T p_far);
 #pragma endregion
 
         //TODO clean these
@@ -259,8 +259,8 @@ namespace GPM
         template<typename U>
         Matrix4<T>& operator=(const Matrix4<U>& p_matrix);
     	
-        T operator[](const int p_index) const;
-    	T operator()(const int p_row, const int p_col) const;
+        T& operator[](const int p_index);
+        T& operator()(const int p_row, const int p_col);
 
 #pragma endregion
 

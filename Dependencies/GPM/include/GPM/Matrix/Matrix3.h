@@ -481,8 +481,8 @@ namespace GPM
         */
         constexpr static std::string ToString(const Matrix3<T>& p_matrix);
 
-    	T operator[](const int p_index) const;
-    	T operator()(const int p_row, const int p_col) const;
+    	T& operator[](const int p_index);
+    	T& operator()(const int p_row, const int p_col);
 
 #pragma endregion
     };// end struct Matrix3

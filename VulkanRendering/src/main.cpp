@@ -89,7 +89,7 @@ struct SwapChainSupportDetails {
 struct UniformBufferObject {
 	alignas(16) glm::mat4 model;
 	alignas(16) GPM::Matrix4F view;
-	alignas(16) glm::mat4 proj;
+	alignas(16) GPM::Matrix4F proj;
 };
 
 class HelloTriangleApplication {
@@ -1464,18 +1464,18 @@ private:
 		ubo.model = glm::rotate(glm::mat4(1.0f), time * glm::radians(45.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		//ubo.view = glm::lookAt(glm::vec3(1.5f, 1.5f, 1.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 
- 		ubo.proj = glm::perspective(glm::radians(45.0f), swapChainExtent.width / static_cast<float>(swapChainExtent.height), 0.1f, 10.0f);
+ 		//ubo.proj = glm::perspective(glm::radians(45.0f), swapChainExtent.width / static_cast<float>(swapChainExtent.height), 0.1f, 10.0f);
 		ubo.view = GPM::Matrix4F::LookAt(GPM::Vector3F(1.5f, 1.5f, 1.0f), GPM::Vector3F(0.0f, 0.0f, 0.0f), GPM::Vector3F(0.0f, 0.0f, 1.0f));
-		//ubo.proj = GPM::Matrix4F::Perspective(GPM::Tools::Utils::ToRadians(45.0f), swapChainExtent.width / static_cast<float>(swapChainExtent.height), 0.1f, 10.0f);
-		ubo.proj[1][1] *= -1;
+		ubo.proj = GPM::Matrix4F::Perspective(GPM::Tools::Utils::ToRadians(45.0f), swapChainExtent.width / static_cast<float>(swapChainExtent.height), 0.1f, 10.0f);
+		ubo.proj(1, 1) *= -1;
 
-		std::cout << ubo.proj[0][0] << " " << ubo.proj[0][1] << " " << ubo.proj[0][2] << " " << ubo.proj[0][3] << '\n'
+		/*std::cout << ubo.proj[0][0] << " " << ubo.proj[0][1] << " " << ubo.proj[0][2] << " " << ubo.proj[0][3] << '\n'
 			<< ubo.proj[1][0] << " " << ubo.proj[1][1] << " " << ubo.proj[1][2] << " " << ubo.proj[1][3] << '\n'
 			<< ubo.proj[2][0] << " " << ubo.proj[2][1] << " " << ubo.proj[2][2] << " " << ubo.proj[2][3] << '\n'
 			<< ubo.proj[3][0] << " " << ubo.proj[3][1] << " " << ubo.proj[3][2] << " " << ubo.proj[3][3] << '\n';
-		 
+		 */
 		void* data;
-		vkMapMemory(device, uniformBuffersMemory[currentImage], 0, sizeof(ubo), 0, &data);
+ 		vkMapMemory(device, uniformBuffersMemory[currentImage], 0, sizeof(ubo), 0, &data);
 		memcpy(data, &ubo, sizeof(ubo));
 		vkUnmapMemory(device, uniformBuffersMemory[currentImage]);
 	}

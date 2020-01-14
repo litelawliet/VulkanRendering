@@ -277,30 +277,32 @@ constexpr Matrix4<T> Matrix4<T>::Inverse(const Matrix4<T>& p_matrix)
 template<typename T>
 constexpr Matrix4<T> Matrix4<T>::LookAt(const Vector3<T>& p_position, const Vector3<T>& p_target, const Vector3<T>& p_up)
 {
-	const Vector3F w = Vector3F::Normalize(p_target - p_position);
-	const Vector3F u = Vector3F::Normalize(Vector3F::Cross(w, p_up));
-	const Vector3F v = Vector3F::Cross(u, w);
+	const Vector3<T> w = Vector3<T>::Normalize(p_target - p_position);
+	const Vector3<T> u = Vector3<T>::Normalize(Vector3F::Cross(w, p_up));
+	const Vector3<T> v = Vector3<T>::Cross(u, w);
 
 	return
 	{
-		u.x, v.x, -w.x, 0.0f,
-		u.y, v.y, -w.y, 0.0f,
-		u.z, v.z, -w.z, 0.0f,
-		-u.Dot(p_position), -v.Dot(p_position), w.Dot(p_position), 1.0f
+		u.x, v.x, -w.x, static_cast<T>(0),
+		u.y, v.y, -w.y, static_cast<T>(0),
+		u.z, v.z, -w.z, static_cast<T>(0),
+		-u.Dot(p_position), -v.Dot(p_position), w.Dot(p_position), static_cast<T>(1)
 	};
 }
 
 template<typename T>
-constexpr Matrix4<T> Matrix4<T>::Perspective(const float p_fovy, const float p_aspectRatio, const float p_near, const float p_far)
+constexpr Matrix4<T> Matrix4<T>::Perspective(const T p_fovy, const T p_aspectRatio, const T p_near, const T p_far)
 {
-	const float angle = p_fovy / 2.0f;
-	return
-	{
-		1.0f / (p_aspectRatio * Tools::Utils::TanF(angle)), 0.0f, 0.0f, 0.0f,
-		0.0f, 1.0f / Tools::Utils::TanF(angle), 0.0f, 0.0f,
-		0.0f, 0.0f, p_far / (p_far - p_near), 1.0f,
-		0.0f, 0.0f, (-p_near*p_far) / (p_far - p_near), 0.0f
-	};
+	T const tanHalfFovy = static_cast<T>(Tools::Utils::Tan(p_fovy / static_cast<T>(2)));
+
+	Matrix4<T> result = zero;
+	result(0, 0) = static_cast<T>(1) / (p_aspectRatio * tanHalfFovy);
+	result(1, 1) = static_cast<T>(1) / (tanHalfFovy);
+	result(2, 2) = p_far / (p_near - p_far);
+	result(2, 3) = -static_cast<T>(1);
+	result(3, 2) = -(p_far * p_near) / (p_far - p_near);
+	
+	return result;
 }
 
 #pragma endregion 
@@ -633,7 +635,7 @@ constexpr std::ostream& GPM::operator<<(std::ostream& p_os, const Matrix4<T>& p_
 }
 
 template<typename T>
-T Matrix4<T>::operator[](const int p_index) const
+T& Matrix4<T>::operator[](const int p_index)
 {
 	if (p_index < 0 || p_index > 15)
 		throw std::out_of_range("Out of range index in Matrix4");
@@ -642,7 +644,7 @@ T Matrix4<T>::operator[](const int p_index) const
 }
 
 template <typename T>
-T Matrix4<T>::operator()(const int p_row, const int p_col) const
+T& Matrix4<T>::operator()(const int p_row, const int p_col)
 {
 	if (p_row < 0 || p_row > 3)
 		throw std::out_of_range("Out of range 'row' in Matrix4");
